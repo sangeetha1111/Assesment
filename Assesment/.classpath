@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/sangeethas/Downloads/jar_files (1)/rest-assured-5.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sangeethas/Downloads/jar_files (2)/commons-lang3-3.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sangeethas/Downloads/jar_files (2)/itu-1.7.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sangeethas/Downloads/jar_files (2)/jackson-annotations-2.14.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sangeethas/Downloads/jar_files (2)/jackson-core-2.14.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sangeethas/Downloads/jar_files (2)/jackson-databind-2.14.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sangeethas/Downloads/jar_files (2)/json-schema-validator-1.0.77.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sangeethas/Downloads/jar_files (3)/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sangeethas/Downloads/jar_files (3)/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sangeethas/Downloads/jar_files (3)/httpclient-4.5.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sangeethas/Downloads/jar_files (3)/httpcore-4.4.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sangeethas/Downloads/jar_files (4)/httpcore-4.4.16.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sangeethas/Downloads/AccessJdbcDriver/commons-lang3-3.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sangeethas/Downloads/AccessJdbcDriver/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sangeethas/Downloads/AccessJdbcDriver/hsqldb-2.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sangeethas/Downloads/AccessJdbcDriver/jackcess-3.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sangeethas/Downloads/AccessJdbcDriver/ucanaccess-5.0.1.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
