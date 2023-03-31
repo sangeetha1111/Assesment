@@ -22,40 +22,33 @@ Feature: UI Validation
 
   @UI
   Scenario: Request and Response Validation
-    
-    Given Launch
+  
     When Click
     Then RequestURL
-    And  Responsecode
-    
-   
- 
-   
-     @UI1
+    And Responsecode
+
+  @UI1
   Scenario: Support button validation
-    
-    Given Launch
+   
     When Click
     Then SupportButton
- 
-    
-         @UI2
+
+  @UI2
   Scenario: OneTimePayment validation
-    
-    Given Launch
+   
     When Click
     Then Onetimepayment
-    
-             @UI3
+
+  @UI3
   Scenario: MonthlySupport validation
-    
-    Given Launch
+   
     When Click
     Then Monthlysupport
-   
-      @UI4
+
+  @UI4
   Scenario: Upgrade validation
-    
-    Given Launch
+   
     When Click
     Then Upgrade
+   
+    

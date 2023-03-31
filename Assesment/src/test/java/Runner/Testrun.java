@@ -10,7 +10,8 @@ import io.cucumber.junit.CucumberOptions;
                 glue= {"stepdefinition"},
                 tags= "@tag1",
                 plugin= {"pretty","html:target/cucumber-reports/report.html"},
-                publish=true
+                publish=true,
+                monochrome=true
 
                 
                

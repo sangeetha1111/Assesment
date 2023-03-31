@@ -1,5 +1,7 @@
 package stepdefinition;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -20,15 +22,16 @@ import java.util.Map;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.remote.server.handler.FindElements;
+import org.testng.Assert;
 
 import UI.Findelements;
 
 public class steps {
 	
 	RequestSpecification Req;
-	 Response res;
-	 ValidatableResponse val;
-	 public WebDriver dr;
+	Response res;
+	ValidatableResponse val;
+	public WebDriver dr;
 	 public Findelements f;
 	
 	@Given("Baseurl")
@@ -39,38 +42,30 @@ public class steps {
 
 	@When("get users")
 	public void get_users() {
-		System.out.println("Get");
-	  res=given()
+		  res=given()
 	  .when().get("https://reqres.in/api/users?page=2");
-	  
+
 	}
 
 	@Then("I validate the outcomes")
 	public void i_validate_the_outcomes() {
-		System.out.println("Verify");
-		res.then().log().all();
+			res.then().log().all();
 	}
-
-	
-	
 
 	@When("get specific user")
 	public void get_specific_user() {
-		System.out.println("Get");
-	  res=given()
+		 res=given()
 	  .when().get("https://reqres.in/api/users/2");
 	  
 	}
 
 	@Then("validate")
 	public void validate() {
-		System.out.println("Verify");
 		res.then().log().all();
 	}	
 	
 	@When("user not found")
 	public void user_not_found() {
-		System.out.println("Get");
 	  res=given()
 	  .when().get("https://reqres.in/api/users/23");
 	  
@@ -78,18 +73,17 @@ public class steps {
 
 	@Then("Verify")
 	public void Verify (){
-		
+	
 		int code=res.getStatusCode();
-		System.out.println("Status Code is "+code);
+		Assert.assertEquals(404,code);
+     res.then().log().all();
 	}	
 	
-	
-	
+		
 	@Given("headerinfo")
 	public void headerinfo()
 	
 	{
-		
 		Map<String,String> data=new HashMap<String,String>();
 		data.put("name", "morpheus");
 		data.put("job", "leader");
@@ -98,7 +92,7 @@ public class steps {
 	}
 	@When("create")
 	public void create() {
-		System.out.println("Get");
+	
 	  res=Req.
 	  when().post("https://reqres.in/api/users");
 	  
@@ -115,9 +109,7 @@ public class steps {
 	
 	@Given("update")
 	public void update()
-	
-	{
-		
+		{
 		Map<String,String> data=new HashMap<String,String>();
 		data.put("name", "morpheus");
 		data.put("job", "zion resident");
@@ -126,7 +118,7 @@ public class steps {
 	}
 	@When("updaterecord")
 	public void updaterecord() {
-		System.out.println("Put");
+	
 	  res=Req.
 	  when().put("https://reqres.in/api/users/2");
 	  
@@ -144,21 +136,19 @@ public class steps {
 	
 	@When("delete")
 	public void delete() {
-		System.out.println("Delete");
+	
 	  res=
 	  when().delete("https://reqres.in/api/users/2");
-	  
 	}
-	
 	
 	@Then("check2")
 	public void check2 (){
 		
 	res.then().assertThat().statusCode(204);
-	
 	res.then().log().all();
 	}	
-	@Given("Launch")
+	//@Given("Launch")
+	@Before
 	public void Launch()
 	{
 		System.setProperty("webdriver.edge.driver","./src/test/java/Driver/msedgedriver.exe");
@@ -172,7 +162,6 @@ public class steps {
 	{
 		
 		dr.get("https://reqres.in/");
-	
 		f.click();
 		
 	}
@@ -180,30 +169,25 @@ public class steps {
 	public void RequestURL() 
 	{
 		String s=f.verifyreq();
-				
-			System.out.println("Request URL for LIST USERS"+""+s );
-		
+        Assert.assertEquals("/api/users?page=2", s);		
+	
 	}
 	
 	@And("Responsecode")
 	public void Responsecode()
 	{
 	
-		
 		String s2=f.verifyres();
-		System.out.println("Response Code is"+ s2);
+	    Assert.assertEquals("200", s2);
 	}
 	
-
 	
 	@Then("SupportButton")
 	public void SupportButton()
 	{
 		
 		Boolean b1=f.supportbutton();
-		
-		if (b1=true) 
-		System.out.println("Support Button is available in HOMEPAGE");
+		Assert.assertTrue(b1);
 		
 	}
 	
@@ -213,31 +197,32 @@ public class steps {
 	{
 		
 		Boolean b2=f.Onetimepayment();
-		if (b2=true) 
-		System.out.println("OneTimepayment is available in Supportpage");
+		Assert.assertTrue(b2);
 	}	
-	
-
 	
 	@And("Monthlysupport")
 	public void Monthlysupport()
 	{
 		
 		Boolean b2=f.Monthlysupport();
-		if (b2=true) 
-		System.out.println("Monthlypayment is available in Supportpage");
+		Assert.assertTrue(b2);
 	}	
 	
 
-	
 	@Then("Upgrade")
 	public void Upgrade()
 	{
 		
 		Boolean b3=f.Monthlysupport();
-		if (b3=true) 
-		System.out.println("Upgrade is available in Supportpage");
+		Assert.assertTrue(b3);
 	}	
+	
+	@After//@And("Close")
+	public void close()
+	{
+		dr.close();
+		
+	}
 	
 	
 }

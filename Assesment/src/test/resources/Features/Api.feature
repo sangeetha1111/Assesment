@@ -25,40 +25,30 @@ Feature: API Validation
     Given Baseurl
     When get users
     Then I validate the outcomes
-   
 
- @Get1
+  @Get1
   Scenario: SINGLE USER
-  
     When get specific user
     Then validate
-    
-    
-     @Get2
+
+  @Get2
   Scenario: SINGLE USER NOT FOUND
-  
     When user not found
     Then Verify
-    
-    @POST
-    
-      Scenario: CREATE NEW USER
+
+  @POST
+  Scenario: CREATE NEW USER
     Given headerinfo
     When create
     Then check
-    
-    @PUT
-    
-    Scenario: UPDATE USER
+
+  @PUT
+  Scenario: UPDATE USER
     Given update
     When updaterecord
     Then check1
-   
-    @DELETE
-    
-    Scenario: DELETE USER
-   
+
+  @DELETE
+  Scenario: DELETE USER
     When delete
     Then check2
-     
-    
