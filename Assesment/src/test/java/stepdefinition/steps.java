@@ -217,7 +217,7 @@ public class steps {
 		Assert.assertTrue(b3);
 	}	
 	
-	@After//@And("Close")
+	@After
 	public void close()
 	{
 		dr.close();
